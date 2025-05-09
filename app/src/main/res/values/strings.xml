@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HabitTracker</string>
+    <string name="timer_page">Timer</string>
+    <string name="water_page">Water</string>
+    <string name="workouts_page">Workouts</string>
+    <string name="back_button">Back</string>
+    <string name="change_timer">Change Timer</string>
 </resources>
