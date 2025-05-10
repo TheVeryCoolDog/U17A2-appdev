@@ -1,7 +1,5 @@
 package com.verycooldog.habittracker;
 
-import static java.lang.String.format;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -33,10 +32,9 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
         change_timer = findViewById(R.id.change_timer_visual);
         timer_toggle = findViewById(R.id.timer_toggle);
         lap_clear = findViewById(R.id.lap_clear);
-        back_button.setOnClickListener(this);
-        change_timer.setOnClickListener(this);
-        timer_toggle.setOnClickListener(this);
-        lap_clear.setOnClickListener(this);
+        for (Button button : Arrays.asList(back_button, change_timer, timer_toggle, lap_clear)) {
+            button.setOnClickListener(this);
+        }
 
         start_timer();
     }
@@ -63,9 +61,8 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if (v == back_button) {
-            finish();
-        } else if (v == change_timer) {
+        if (v == back_button) finish();
+        else if (v == change_timer) {
             finish();
             startActivity(new Intent(this, TimerVisual.class));
         } else if (v == timer_toggle) {

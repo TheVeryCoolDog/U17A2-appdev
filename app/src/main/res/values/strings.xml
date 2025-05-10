@@ -10,4 +10,12 @@
     <string name="timer_toggle_stop">Stop</string>
     <string name="timer_toggle_lap">Lap</string>
     <string name="timer_toggle_clear">Clear</string>
+    <string name="water_default">0ml</string>
+    <string name="small_glass">220ml</string>
+    <string name="medium_glass">250ml</string>
+    <string name="large_glass">500ml</string>
+    <string name="half_pint">½ pint</string>
+    <string name="pint">pint</string>
+    <string name="custom_amount">ml?</string>
+    <string name="confirm">Submit</string>
 </resources>

@@ -8,8 +8,6 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
-
 public class Menu extends AppCompatActivity implements View.OnClickListener {
 
     Button water;
