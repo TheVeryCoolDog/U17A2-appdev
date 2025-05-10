@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
     Boolean pause = true;
     double count = 0.0;
     LinearLayout laps_done;
+    ScrollView laps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
         }
         start_timer();
         laps_done = findViewById(R.id.laps_done);
+        laps = findViewById(R.id.laps);
     }
 
     public void start_timer() {
@@ -80,7 +83,9 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
                 count = 0.0;
                 timer_txt.setText(R.string.timer_default);
                 laps_done.removeAllViews();
+                laps.setVisibility(View.INVISIBLE);
             } else {
+                laps.setVisibility(View.VISIBLE);
                 TextView placeholder = new TextView(this);
                 placeholder.setText(String.format(Locale.getDefault(),
                         "%1$02.0f:%2$05.2f",
