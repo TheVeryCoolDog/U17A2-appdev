@@ -39,7 +39,7 @@ public class Workouts extends AppCompatActivity implements View.OnClickListener 
         double weight_val = Double.parseDouble(String.valueOf(weight.getText()));
         double met_val = Double.parseDouble(String.valueOf(met.getText()));
         int minutes_val = Integer.parseInt(String.valueOf(minutes.getText()));
-        kcal += met_val*3.5*(weight_val/200)*(double)minutes_val;
+        kcal += ((met_val*3.5*weight_val)/200*(double)minutes_val);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Workouts extends AppCompatActivity implements View.OnClickListener 
                 calcKcal();
                 burnt.setText(String.format(Locale.getDefault(), "%2$,.2f %1$s", "Kcal burned", kcal));
             } catch (Exception ignored) {}
-            Objects.requireNonNull(weight.getText()).clear();
+            Objects.requireNonNull(minutes.getText()).clear();
             Objects.requireNonNull(met.getText()).clear();
         }
     }
