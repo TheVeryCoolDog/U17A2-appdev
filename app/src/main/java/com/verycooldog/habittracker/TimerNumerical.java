@@ -1,9 +1,12 @@
 package com.verycooldog.habittracker;
 
+import static java.lang.Math.floor;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +24,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
     TextView timer_txt;
     Boolean pause = true;
     double count = 0.0;
+    LinearLayout laps_done;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +39,8 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
         for (Button button : Arrays.asList(back_button, change_timer, timer_toggle, lap_clear)) {
             button.setOnClickListener(this);
         }
-
         start_timer();
+        laps_done = findViewById(R.id.laps_done);
     }
 
     public void start_timer() {
@@ -49,7 +53,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
                     if (!pause) {
                         count += 0.01;
                         timer_txt.setText(String.format(Locale.getDefault(),
-                                "%2$,1.2f %1$s", "seconds", count));
+                                "%1$02.0f:%2$05.2f", floor(count/60)%60, count%60));
                     }
                 });
             }
@@ -75,8 +79,13 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
             if (pause) {
                 count = 0.0;
                 timer_txt.setText(R.string.timer_default);
+                laps_done.removeAllViews();
             } else {
-                //TODO: create lap system
+                TextView placeholder = new TextView(this);
+                placeholder.setText(String.format(Locale.getDefault(),
+                        "%1$02.0f:%2$05.2f",
+                        floor(count/60)%60, count%60));
+                laps_done.addView(placeholder);
             }
         }
     }

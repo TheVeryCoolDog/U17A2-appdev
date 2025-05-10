@@ -5,7 +5,7 @@
     <string name="workouts_page">Workouts</string>
     <string name="back_button">Back</string>
     <string name="change_timer">Change Timer</string>
-    <string name="timer_default">0.00 seconds</string>
+    <string name="timer_default">00:00.00</string>
     <string name="timer_toggle_start">Start</string>
     <string name="timer_toggle_stop">Stop</string>
     <string name="timer_toggle_lap">Lap</string>
