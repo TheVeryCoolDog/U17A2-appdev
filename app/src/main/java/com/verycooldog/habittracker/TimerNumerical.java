@@ -20,7 +20,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
     Button lap_clear;
     TextView timer_txt;
     Boolean pause = true;
-    Double count = 0.0;
+    double count = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +43,13 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
         Timer timer = new Timer();
 
         timer.schedule(new TimerTask() {
-            //double count = 0.0;
             @Override
             public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (!pause) {
-                            count += 0.01;
-                            timer_txt.setText(String.format(Locale.getDefault(),"%2$,1.2f %1$s", "seconds", count));
-                        }
+                runOnUiThread(() -> {
+                    if (!pause) {
+                        count += 0.01;
+                        timer_txt.setText(String.format(Locale.getDefault(),
+                                "%2$,1.2f %1$s", "seconds", count));
                     }
                 });
             }

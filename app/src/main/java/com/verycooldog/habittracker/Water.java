@@ -23,7 +23,7 @@ public class Water extends AppCompatActivity implements View.OnClickListener {
     Button confirm;
     TextInputEditText input;
     TextView drank;
-    Integer amount = 0;
+    int amount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class Water extends AppCompatActivity implements View.OnClickListener {
         large_glass = findViewById(R.id.large_glass);
         half_pint = findViewById(R.id.half_pint);
         pint = findViewById(R.id.pint);
-        confirm = findViewById(R.id.confirm);
+        confirm = findViewById(R.id.confirm_water);
         for (Button button : Arrays.asList(
                 back_button, small_glass, medium_glass, large_glass, half_pint, pint, confirm)) {
             button.setOnClickListener(this);

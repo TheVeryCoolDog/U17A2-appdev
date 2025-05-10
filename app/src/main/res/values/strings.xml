@@ -18,4 +18,8 @@
     <string name="pint">pint</string>
     <string name="custom_amount">ml?</string>
     <string name="confirm">Submit</string>
+    <string name="workouts_default">Okcal burned</string>
+    <string name="custom_weight">Approx weight in KG?</string>
+    <string name="custom_met">Approx MET of activity?</string>
+    <string name="custom_minutes">Time spent in Minutes?</string>
 </resources>
