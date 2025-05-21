@@ -25,6 +25,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
     TextView timer_txt;
     Boolean pause = true;
     double count = 0.0;
+    double last = 0.0;
     LinearLayout laps_done;
     ScrollView laps;
 
@@ -69,7 +70,7 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
         else if (v == change_timer) {
             finish();
             startActivity(new Intent(this, TimerVisual.class));
-        } else if (v == timer_toggle) {
+        } else if (v == timer_toggle) { //swaps start/stop and clear/lap
             if (pause) {
                 timer_toggle.setText(R.string.timer_toggle_stop);
                 lap_clear.setText(R.string.timer_toggle_lap);
@@ -78,19 +79,20 @@ public class TimerNumerical extends AppCompatActivity implements View.OnClickLis
                 lap_clear.setText(R.string.timer_toggle_clear);
             }
             pause = !pause;
-        } else if (v == lap_clear) {
-            if (pause) {
+        } else if (v == lap_clear) { //lap and clear
+            if (pause) { //clear
                 count = 0.0;
                 timer_txt.setText(R.string.timer_default);
                 laps_done.removeAllViews();
                 laps.setVisibility(View.INVISIBLE);
-            } else {
+            } else { //lap
                 laps.setVisibility(View.VISIBLE);
-                TextView placeholder = new TextView(this);
-                placeholder.setText(String.format(Locale.getDefault(),
+                TextView lap = new TextView(this);
+                lap.setText(String.format(Locale.getDefault(),
                         "%1$02.0f:%2$05.2f",
-                        floor(count/60)%60, count%60));
-                laps_done.addView(placeholder);
+                        floor((count-last)/60)%60, (count-last)%60));
+                laps_done.addView(lap);
+                last = count;
             }
         }
     }

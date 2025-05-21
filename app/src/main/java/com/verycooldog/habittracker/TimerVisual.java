@@ -25,7 +25,7 @@ public class TimerVisual extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        if(v == back_button) {
+        if (v == back_button) {
             finish();
         } else if (v == change_timer) {
             finish();
@@ -33,3 +33,4 @@ public class TimerVisual extends AppCompatActivity implements View.OnClickListen
         }
     }
 }
+//TODO - visual timer

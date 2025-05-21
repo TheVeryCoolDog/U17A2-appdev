@@ -30,6 +30,7 @@ public class Water extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.water);
 
+        //TODO - simplify with <binding>
         drank = findViewById(R.id.drank);
         input = findViewById(R.id.volume);
         back_button = findViewById(R.id.back_button);

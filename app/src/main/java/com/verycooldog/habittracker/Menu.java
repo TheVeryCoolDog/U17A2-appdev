@@ -8,6 +8,8 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
+
 public class Menu extends AppCompatActivity implements View.OnClickListener {
 
     Button water;
@@ -23,9 +25,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         water = findViewById(R.id.water);
         timer = findViewById(R.id.timer);
         workout = findViewById(R.id.workouts);
-        water.setOnClickListener(this);
-        timer.setOnClickListener(this);
-        workout.setOnClickListener(this);
+        for (Button button : Arrays.asList(water, timer, workout)) {
+            button.setOnClickListener(this);
+        }
     }
 
     @Override
