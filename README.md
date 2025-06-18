@@ -3,7 +3,7 @@ U17A2-appdev
 
 ## Designing and development of a mobile app
 
-###### BTEC L3 Y3 U17A2
+###### BTEC L3 Y2 U17A2
 
 ###### This repository has no attached license as it is produced as part of a qualification.
 
@@ -18,6 +18,8 @@ ___
 3. [Review](#review)
     - [Optimisations](#optimisations)
     - [Testing](#testing)
+4. [Evaluation](#evaluation)
+    - [Responsibility](#responsibility)
 
 ___
 
@@ -206,26 +208,26 @@ Note: TimerVisual was excluded from most appropriate tests as it was not fully i
 
 </sub>
 
-| Test | Purpose                                                     | Method                                                                                                                          | Expected                                                    |       Actual        |  
-|:----:|:------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------|:-------------------:|
-|  1   | Check menu button "Timer"                                   | Pressing button "Timer"                                                                                                         | Opens page "TimerNumerical"                                 |     As expected     |
-|  2   | Check menu button "Workouts"                                | Pressing button "Workouts"                                                                                                      | Opens page "Workouts"                                       |     As expected     |
-|  3   | Check menu button "Water"                                   | Pressing button "Water"                                                                                                         | Opens page "Water"                                          |     As expected     |
-|  4   | Check "Change Timer" button on page "TimerNumerical/Visual" | Pressing button "ChangeTimer" on both pages                                                                                     | Switches between pages "TimerNumerical" and "TimerVisual"   |     As expected     |
-|  5   | Check "Back" button on page "TimerNumerical"                | Pressing button "Back"                                                                                                          | Returns to page "Menu"                                      |     As expected     |
-|  6   | Check "Back" button on page "TimerVisual"                   | Pressing button "Back"                                                                                                          | Returns to page "Menu"                                      |     As expected     |
-|  7   | Check "Back" button on page "Workouts"                      | Pressing button "Back"                                                                                                          | Returns to page "Menu"                                      |     As expected     |
-|  8   | Check "Back" button on page "Water"                         | Pressing button "Back"                                                                                                          | Returns to page "Menu"                                      |     As expected     |
-|  9   | Check Timer(Numerical) "Start" button                       | Pressing button "Start"                                                                                                         | "Start" becomes "Stop", "Clear" becomes "Lap", timer starts |     As expected     |
-|  10  | Check Timer(Numerical) "Stop" button                        | Pressing button "Stop"                                                                                                          | "Stop" becomes "Start", "Lap" becomes "Clear", timer stops  |     As expected     |
-|  11  | Check Timer(Numerical) "Lap" button                         | Pressing button "Lap"                                                                                                           | Lap time (dif between last and current) appears below       | Shows current<sup>*</sup> |
-|  12  | Check Timer(Numerical) "Clear" button                       | Pressing button "Clear"                                                                                                         | Timer resets to 00:00.00 and stored laps are removed        |     As expected     |
-|  13  | Check Water volume buttons                                  | Pressing each button with an assigned value                                                                                     | Total is incremented by button label's volume in ml         |     As expected     |
-|  14  | Check "ml?" entry field restriction                         | Attempting to type non-int with external kb                                                                                     | No characters appear                                        |     As expected     |
-|  15  | Check custom Water volume                                   | Pressing "Submit" button                                                                                                        | Custom value is added to water drank                        |     As expected     |
-|  16  | Check weight entry field restriction                        | Attempting to type non-double with external kb                                                                                  | No characters appear                                        |     As expected     |
-|  17  | Check MET entry field restriction                           | Attempting to type non-double with external kb                                                                                  | No characters appear                                        |     As expected     |
-|  18  | Check Minute entry field restriction                        | Attempting to type non-int with external kb                                                                                     | No characters appear                                        |     As expected     |
+| Test | Purpose                                                     | Method                                                                                                                              | Expected                                                    |          Actual           |  
+|:----:|:------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------|:-------------------------:|
+|  1   | Check menu button "Timer"                                   | Pressing button "Timer"                                                                                                             | Opens page "TimerNumerical"                                 |        As expected        |
+|  2   | Check menu button "Workouts"                                | Pressing button "Workouts"                                                                                                          | Opens page "Workouts"                                       |        As expected        |
+|  3   | Check menu button "Water"                                   | Pressing button "Water"                                                                                                             | Opens page "Water"                                          |        As expected        |
+|  4   | Check "Change Timer" button on page "TimerNumerical/Visual" | Pressing button "ChangeTimer" on both pages                                                                                         | Switches between pages "TimerNumerical" and "TimerVisual"   |        As expected        |
+|  5   | Check "Back" button on page "TimerNumerical"                | Pressing button "Back"                                                                                                              | Returns to page "Menu"                                      |        As expected        |
+|  6   | Check "Back" button on page "TimerVisual"                   | Pressing button "Back"                                                                                                              | Returns to page "Menu"                                      |        As expected        |
+|  7   | Check "Back" button on page "Workouts"                      | Pressing button "Back"                                                                                                              | Returns to page "Menu"                                      |        As expected        |
+|  8   | Check "Back" button on page "Water"                         | Pressing button "Back"                                                                                                              | Returns to page "Menu"                                      |        As expected        |
+|  9   | Check Timer(Numerical) "Start" button                       | Pressing button "Start"                                                                                                             | "Start" becomes "Stop", "Clear" becomes "Lap", timer starts |        As expected        |
+|  10  | Check Timer(Numerical) "Stop" button                        | Pressing button "Stop"                                                                                                              | "Stop" becomes "Start", "Lap" becomes "Clear", timer stops  |        As expected        |
+|  11  | Check Timer(Numerical) "Lap" button                         | Pressing button "Lap"                                                                                                               | Lap time (dif between last and current) appears below       | Shows current<sup>*</sup> |
+|  12  | Check Timer(Numerical) "Clear" button                       | Pressing button "Clear"                                                                                                             | Timer resets to 00:00.00 and stored laps are removed        |        As expected        |
+|  13  | Check Water volume buttons                                  | Pressing each button with an assigned value                                                                                         | Total is incremented by button label's volume in ml         |        As expected        |
+|  14  | Check "ml?" entry field restriction                         | Attempting to type non-int with external kb                                                                                         | No characters appear                                        |        As expected        |
+|  15  | Check custom Water volume                                   | Pressing "Submit" button                                                                                                            | Custom value is added to water drank                        |        As expected        |
+|  16  | Check weight entry field restriction                        | Attempting to type non-double with external kb                                                                                      | No characters appear                                        |        As expected        |
+|  17  | Check MET entry field restriction                           | Attempting to type non-double with external kb                                                                                      | No characters appear                                        |        As expected        |
+|  18  | Check Minute entry field restriction                        | Attempting to type non-int with external kb                                                                                         | No characters appear                                        |        As expected        |
 |  19  | Check MET calculation accuracy                              | Entering values: 77.3kg, 11.5METS, 45 Minutes[<sup>value-source</sup>](https://blog.nasm.org/metabolic-equivalents-for-weight-loss) | 700.00 Kcal burned                                          |    700.05<sup>**</sup>    |
 
 <sub>
@@ -236,5 +238,34 @@ in [commit 35e2dad](https://github.com/TheVeryCoolDog/U17A2-appdev/commit/35e2da
 **not altered, ignore rounding
 
 </sub>
+
+---
+
+## Evaluation:
+
+Overall, I believe that I have fully satisfied the given criteria set within the brief and suitably provided to the
+client's requirements. The app I have produced is bare-bones and absent of particular band styling. Although, I can
+change this with minimal input as soon as a style is locked down with the gym. The app is also not totally complete in
+its current state, the visual timer I proposed within my design is missing (as of
+commit [55e1eb6](https://github.com/TheVeryCoolDog/U17A2-appdev/commit/55e1eb638232d7ac8a998fe1d089069c06275e2b)).
+However, I do not consider this to be a significant issue as it was not specifically requested of me. And was instead my
+own contribution to the app's requirements and can be added during a refinement period. My choice of method for workout
+tracking is not 1:1 with the client's request, but it does effectively track workouts done, and, if requested- a counter
+for each cumulative addition can be added with minimal effort. Bar the visual timer, I have not only succeeded in
+meeting the initial client requirements set for me but also faithfully recreated the Designs I made that were agreed
+upon by the client.
+
+In conclusion, there were issues with reaching out of scope stretch goals due to time constraints and thus the decision
+was made to cut them. Despite this, the app functions entirely as intended and to the requirements.
+
+### Responsibility:
+
+During the development of this mobile application, I have successfully demonstrated individual responsibility through:
+
+- adherence with client requirements
+- communication with the client
+- creative designing of application
+- effective time management
+- deprecation of features that were out of initial scope to meet deadlines
 
 ---
